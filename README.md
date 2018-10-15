@@ -1,24 +1,35 @@
-# README
+# SUP(Shimane University Pedia)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 前提
+* [Codeanywhere](https://codeanywhere.com/) 上で、 Ruby(CentOS7.2) のコンテナを用いる
 
-Things you may want to cover:
+## 環境構築手順
+* Codeanywhere で Ruby(CentOS7.2) のコンテナを適当な名前で作成する
 
-* Ruby version
+* SSH Terminal (黒い画面) を開く
 
-* System dependencies
+* このリポジトリを clone する (以下のコマンドを実行する)
+```
+$ git clone https://github.com/SystemCreation2018/SUP.git
+```
 
-* Configuration
+* このディレクトリに移動する
+```
+$ cd SUP
+```
 
-* Database creation
+* このアプリケーションで用いるライブラリ群をインストールする
+```
+$ bundle install --path vendor/bundle
+```
 
-* Database initialization
+* データベース及びテーブルを作成する
+```
+$ rails db:create
+$ rails db:migrate
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ローカルサーバーを立ち上げる
+```
+$ rails server
+```
