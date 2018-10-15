@@ -33,3 +33,6 @@ $ rails db:migrate
 ```
 $ rails server
 ```
+
+## 注意事項
+* Codeanywhere は無料枠だとコンテナを一つしか作れない上、 2 ~ 3 週間ログアウトしているとコンテナが抹消されます。 この github でソースコード管理をすることを徹底し、定期的に Codeanywhere のログインをしましょう。
