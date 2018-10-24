@@ -36,3 +36,16 @@ $ rails server
 
 ## 注意事項
 * Codeanywhere は無料枠だとコンテナを一つしか作れない上、 2 ~ 3 週間ログアウトしているとコンテナが抹消されます。 この github でソースコード管理をすることを徹底し、定期的に Codeanywhere のログインをしましょう。
+
+## github の使い方
+- Codeanywhere のコードを最新化する (このコマンドを実行してから開発を始めてください。)
+```
+$ git pull origin master
+```
+
+- Codeanywhere で開発したプログラムを github に反映する (きりのいいところまで開発したらこのコマンドを実行してください。)
+```
+$ git add .
+$ git commit -m 'ここには作業内容を書いてください（例： トップページの文言を英語から日本語に修正）'
+$ git push origin master
+```
