@@ -10,5 +10,23 @@
   <%= @article.content %>
 </p>
 
+<p>
+  <strong>Comments:</strong>
+  <% @article.comments.each do |comment| %>
+    <p>
+      <%= comment.created_at %> <br>
+      <%= comment.body %> <br>
+      <%= link_to "Destroy", comment_path(comment), method: :delete %>
+    </p>
+  <% end %>
+</p>
+
+<%= form_for([@article, @comment]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Send comment...", name: "comment[body]" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:destory]
+  before_action :set_comment, only: [:destroy]
   
   def create
     @article = Article.find(params[:article_id])
@@ -23,6 +23,6 @@ class CommentsController < ApplicationController
     end
   
     def comment_params
-      params.require(:comment).parmit(:body)
+      params.require(:comment).permit(:body)
     end
 end
