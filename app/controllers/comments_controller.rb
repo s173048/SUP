@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.build(comment_params)
     
+    # binding.pry
     if @comment.save
       redirect_to article_path(@article)
     else
