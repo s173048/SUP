@@ -13,10 +13,13 @@
 <p>
   <strong>Comments:</strong>
   <% @article.comments.each do |comment| %>
-    <p>
-      <%= comment.created_at %> <br>
-      <%= comment.body %> <br>
-    </p>
+    <% if comment.persisted? %>
+      <p>
+        <%= comment.created_at %> <br>
+        <%= comment.body %> <br>
+        <% link_to "Destroy", comment_path(comment), method: :delete %>
+      </p>
+    <% end %>
   <% end %>
 </p>
 
