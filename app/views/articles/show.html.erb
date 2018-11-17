@@ -12,9 +12,9 @@
 
 <p>
   <strong>Comments:</strong>
-  <% @article.comments.select{|i| i.persisted? }.each do |comment| %>
+  <% @article.comments.select{ |c| c.persisted? }.each_with_index do |comment, idx| %>
       <p>
-        <%= comment.created_at %> <br>
+        <%= idx+1 %>:<%= comment.created_at %> <br>
         <%= comment.body %> <br>
         <%= link_to "削除", comment_path(comment), method: :delete %>
       </p>
