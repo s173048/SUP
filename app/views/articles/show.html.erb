@@ -12,14 +12,12 @@
 
 <p>
   <strong>Comments:</strong>
-  <% @article.comments.each do |comment| %>
-    <% if comment.persisted? %>
+  <% @article.comments.select{|i| i.persisted? }.each do |comment| %>
       <p>
         <%= comment.created_at %> <br>
         <%= comment.body %> <br>
-        <% link_to "Destroy", comment_path(comment), method: :delete %>
+        <%= link_to "削除", comment_path(comment), method: :delete %>
       </p>
-    <% end %>
   <% end %>
 </p>
 
